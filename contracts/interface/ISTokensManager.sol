@@ -62,7 +62,7 @@ interface ISTokensManager {
 	 */
 	function mint(MintParams calldata _params)
 		external
-		returns (uint256 tokenId, StakingPosition memory position);
+		returns (uint256, StakingPosition memory);
 
 	/*
 	 * @dev Updates the existing staking position.
@@ -72,7 +72,7 @@ interface ISTokensManager {
 	 */
 	function update(UpdateParams calldata _params)
 		external
-		returns (StakingPosition memory position);
+		returns (StakingPosition memory);
 
 	/*
 	 * @dev Gets the existing staking position.
@@ -82,5 +82,5 @@ interface ISTokensManager {
 	function position(uint256 _tokenId)
 		external
 		view
-		returns (StakingPosition memory position);
+		returns (StakingPosition memory);
 }
