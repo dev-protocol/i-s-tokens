@@ -52,6 +52,11 @@ interface ISTokensManager {
 		uint256 cumulativeReward;
 		uint256 pendingReward;
 	}
+	/*
+	 * @dev perform the initial setup
+	 * @param _config AddressConfig
+	 */
+	function initialize(address _config) external;
 
 	/*
 	 * @dev Creates the new staking position for the caller.
