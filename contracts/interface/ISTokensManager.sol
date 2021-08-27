@@ -13,7 +13,6 @@ interface ISTokensManager {
 	 * @param pendingReward The pending withdrawal reward amount amount
 	 */
 	struct StakingPosition {
-		address owner;
 		address property;
 		uint256 amount;
 		uint256 price;
@@ -84,7 +83,7 @@ interface ISTokensManager {
 	 * @param _tokenId The ID of the staking position
 	 * @return position The results of StakingPosition
 	 */
-	function position(uint256 _tokenId)
+	function positions(uint256 _tokenId)
 		external
 		view
 		returns (StakingPosition memory);
