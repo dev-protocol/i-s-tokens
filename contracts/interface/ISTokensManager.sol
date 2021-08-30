@@ -48,14 +48,14 @@ interface ISTokensManager {
 	 * @param _property The address of the Property as the staking destination
 	 * @param _amount The amount of the new staking position
 	 * @param _price The latest unit price of the cumulative staking reward
-	 * @return tikenId_ The ID of the created new staking position
+	 * @return uint256 The ID of the created new staking position
 	 */
 	function mint(
 		address _owner,
 		address _property,
 		uint256 _amount,
 		uint256 _price
-	) external returns (uint256 tikenId_);
+	) external returns (uint256);
 
 	/*
 	 * @dev Updates the existing staking position.
@@ -79,20 +79,20 @@ interface ISTokensManager {
 	/*
 	 * @dev Gets the existing staking position.
 	 * @param _tokenId The ID of the staking position
-	 * @return property_ The address of the Property as the staking destination
-	 * @return amount_ The amount of the new staking position
-	 * @return price_ The latest unit price of the cumulative staking reward
-	 * @return cumulativeReward_ The cumulative withdrawn reward amount
-	 * @return pendingReward_ The pending withdrawal reward amount amount
+	 * @return address The address of the Property as the staking destination
+	 * @return uint256 The amount of the new staking position
+	 * @return uint256 The latest unit price of the cumulative staking reward
+	 * @return uint256 The cumulative withdrawn reward amount
+	 * @return uint256 The pending withdrawal reward amount amount
 	 */
 	function positions(uint256 _tokenId)
 		external
 		view
 		returns (
-			address property_,
-			uint256 amount_,
-			uint256 price_,
-			uint256 cumulativeReward_,
-			uint256 pendingReward_
+			address,
+			uint256,
+			uint256,
+			uint256,
+			uint256
 		);
 }
