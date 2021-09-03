@@ -99,10 +99,10 @@ interface ISTokensManager {
 	/*
 	 * @dev Gets the reward status of the staking position.
 	 * @param _tokenId The ID of the staking position
-	 * @param uint256 The reward amount of adding the cumulative withdrawn amount
+	 * @return uint256 The reward amount of adding the cumulative withdrawn amount
 	 to the withdrawable amount
-	 * @param uint256 The cumulative withdrawn reward amount
-	 * @param uint256 The withdrawable reward amount
+	 * @return uint256 The cumulative withdrawn reward amount
+	 * @return uint256 The withdrawable reward amount
 	 */
 	function rewards(uint256 _tokenId)
 		external
