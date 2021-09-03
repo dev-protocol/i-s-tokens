@@ -104,5 +104,12 @@ interface ISTokensManager {
 	 * @param uint256 The cumulative withdrawn reward amount
 	 * @param uint256 The withdrawable reward amount
 	 */
-	function rewards(uint256 _tokenId) external view returns(uint256, uint256, uint256);
+	function rewards(uint256 _tokenId)
+		external
+		view
+		returns (
+			uint256,
+			uint256,
+			uint256
+		);
 }
