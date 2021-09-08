@@ -1,6 +1,6 @@
 {
 	"name": "@devprotocol/i-s-tokens",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "STokens interface",
 	"scripts": {
 		"generate": "waffle waffle-config.json",
