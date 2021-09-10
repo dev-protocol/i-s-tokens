@@ -69,7 +69,7 @@ interface ISTokensManager {
 	 * @return bool On success, true will be returned
 	 */
 	function update(
-		uint256 _tikenId,
+		uint256 _tokenId,
 		uint256 _amount,
 		uint256 _price,
 		uint256 _cumulativeReward,
