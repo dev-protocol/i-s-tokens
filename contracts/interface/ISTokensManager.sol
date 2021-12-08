@@ -36,6 +36,28 @@ interface ISTokensManager {
 	);
 
 	/*
+	 * @dev The event fired when set toke uri.
+	 * @param tokenId The ID of the created new staking position
+	 * @param author user of set token uri
+	 * @param data The address of the owner of the new staking position
+	 */
+	event SetTokenUri(uint256 tokenId, address author, string data);
+
+	/*
+	 * @dev The event fired when toke uri freezed.
+	 * @param tokenId The ID of the freezed token uri
+	 * @param freezingUser user of freezed token uri
+	 */
+	event Freezed(uint256 tokenId, address freezingUser);
+
+	/*
+	 * @dev The event fired when toke uri melted.
+	 * @param tokenId The ID of the melted token uri
+	 * @param meltingUser user of melted token uri
+	 */
+	event Melted(uint256 tokenId, address meltingUser);
+
+	/*
 	 * @dev perform the initial setup
 	 * @param _config AddressConfig
 	 */
@@ -77,6 +99,25 @@ interface ISTokensManager {
 	) external returns (bool);
 
 	/*
+	 * @dev set token uri information
+	 * @param _tokenId The ID of the staking position
+	 * @param _data set data
+	 */
+	function setTokenURIImage(uint256 _tokenId, string memory _data) external;
+
+	/*
+	 * @dev freeze token uri data
+	 * @param _tokenId The ID of the staking position
+	 */
+	function freezeTokenURI(uint256 _tokenId) external;
+
+	/*
+	 * @dev melt token uri data
+	 * @param _tokenId The ID of the staking position
+	 */
+	function meltTokenURI(uint256 _tokenId) external;
+
+	/*
 	 * @dev Gets the existing staking position.
 	 * @param _tokenId The ID of the staking position
 	 * @return address The address of the Property as the staking destination
@@ -94,6 +135,20 @@ interface ISTokensManager {
 			uint256,
 			uint256,
 			uint256
+		);
+
+	/*
+	 * @dev Gets the set toke uri data.
+	 * @param _tokenId The ID of the staking position
+	 * @return Descriptors descriptor
+	 */
+	function descriptors(uint256 _tokenId)
+		external
+		view
+		returns (
+			bool,
+			address,
+			string memory
 		);
 
 	/*
