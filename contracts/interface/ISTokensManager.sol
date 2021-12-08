@@ -64,6 +64,12 @@ interface ISTokensManager {
 	function initialize(address _config) external;
 
 	/*
+	 * @dev descriptor address setter
+	 * @param _descriptor descriptor address
+	 */
+	function setDescriptor(address _descriptor) external;
+
+	/*
 	 * @dev Creates the new staking position for the caller.
 	 * Mint must be called from the Lockup contract.
 	 * @param _owner The address of the owner of the new staking position
