@@ -109,7 +109,7 @@ interface ISTokensManager {
 	 * @param _tokenId The ID of the staking position
 	 * @param _data set data
 	 */
-	function setTokenURIImage(uint256 _tokenId, string memory _data) external;
+	function setTokenURIImage(uint256 _tokenId, string calldata _data) external;
 
 	/*
 	 * @dev freeze token uri data
