@@ -51,13 +51,6 @@ interface ISTokensManager {
 	event Freezed(uint256 tokenId, address freezingUser);
 
 	/*
-	 * @dev The event fired when toke uri melted.
-	 * @param tokenId The ID of the melted token uri
-	 * @param meltingUser user of melted token uri
-	 */
-	event Melted(uint256 tokenId, address meltingUser);
-
-	/*
 	 * @dev perform the initial setup
 	 * @param _config AddressConfig
 	 */
@@ -116,12 +109,6 @@ interface ISTokensManager {
 	 * @param _tokenId The ID of the staking position
 	 */
 	function freezeTokenURI(uint256 _tokenId) external;
-
-	/*
-	 * @dev melt token uri data
-	 * @param _tokenId The ID of the staking position
-	 */
-	function meltTokenURI(uint256 _tokenId) external;
 
 	/*
 	 * @dev Gets the existing staking position.
