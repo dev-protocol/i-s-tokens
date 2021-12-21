@@ -36,31 +36,11 @@ interface ISTokensManager {
 	);
 
 	/*
-	 * @dev The event fired when set toke uri.
-	 * @param tokenId The ID of the created new staking position
-	 * @param author user of set token uri
-	 * @param data The address of the owner of the new staking position
-	 */
-	event SetTokenUri(uint256 tokenId, address author, string data);
-
-	/*
 	 * @dev The event fired when toke uri freezed.
 	 * @param tokenId The ID of the freezed token uri
 	 * @param freezingUser user of freezed token uri
 	 */
 	event Freezed(uint256 tokenId, address freezingUser);
-
-	/*
-	 * @dev perform the initial setup
-	 * @param _config AddressConfig
-	 */
-	function initialize(address _config) external;
-
-	/*
-	 * @dev descriptor address setter
-	 * @param _descriptor descriptor address
-	 */
-	function setDescriptor(address _descriptor) external;
 
 	/*
 	 * @dev Creates the new staking position for the caller.
@@ -131,18 +111,11 @@ interface ISTokensManager {
 		);
 
 	/*
-	 * @dev Gets the set toke uri data.
+	 * @dev Get the freezed status.
 	 * @param _tokenId The ID of the staking position
-	 * @return Descriptors descriptor
+	 * @return bool If freezed, return true
 	 */
-	function descriptors(uint256 _tokenId)
-		external
-		view
-		returns (
-			bool,
-			address,
-			string memory
-		);
+	function isFreezed(uint256 _tokenId) external view returns (bool);
 
 	/*
 	 * @dev Gets the reward status of the staking position.
