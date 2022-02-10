@@ -37,6 +37,6 @@
 	},
 	"dependencies": {
 		"ethereum-waffle": "3.4.0",
-		"solhint": "3.3.6"
+		"solhint": "3.3.7"
 	}
 }
