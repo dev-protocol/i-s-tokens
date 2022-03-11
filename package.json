@@ -28,7 +28,7 @@
 		"eslint-config-xo": "0.40.0",
 		"eslint-config-xo-typescript": "0.50.0",
 		"husky": "7.0.4",
-		"mocha": "9.2.1",
+		"mocha": "9.2.2",
 		"prettier": "2.5.1",
 		"prettier-plugin-solidity": "1.0.0-beta.19",
 		"rimraf": "3.0.2",
