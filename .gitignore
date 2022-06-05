@@ -62,7 +62,8 @@ typings/
 .next
 
 # output of typechain
-build
+artifacts
+cache
 types
 
 # output of tsc
