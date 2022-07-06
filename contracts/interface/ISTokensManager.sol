@@ -49,13 +49,15 @@ interface ISTokensManager {
 	 * @param _property The address of the Property as the staking destination
 	 * @param _amount The amount of the new staking position
 	 * @param _price The latest unit price of the cumulative staking reward
+	 * @param _payload The payload for token
 	 * @return uint256 The ID of the created new staking position
 	 */
 	function mint(
 		address _owner,
 		address _property,
 		uint256 _amount,
-		uint256 _price
+		uint256 _price,
+		bytes32 _payload
 	) external returns (uint256);
 
 	/*
@@ -168,6 +170,13 @@ interface ISTokensManager {
 	 * @return address descriptor address
 	 */
 	function descriptorOf(address _property) external view returns (address);
+
+	/*
+	 * @dev get the payload
+	 * @param _tokenId token id
+	 * @return bytes32 stored payload
+	 */
+	function payloadOf(uint256 _tokenId) external view returns (bytes32);
 
 	/*
 	 * @dev get current token id
