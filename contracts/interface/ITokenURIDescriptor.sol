@@ -11,13 +11,15 @@ interface ITokenURIDescriptor {
 	 * @param _owner owner address
 	 * @param _positions staking position
 	 * @param _rewards rewards
+	 * @param _payload token payload
 	 * @return string image information
 	 */
 	function image(
 		uint256 _tokenId,
 		address _owner,
 		ISTokensManagerStruct.StakingPositions memory _positions,
-		ISTokensManagerStruct.Rewards memory _rewards
+		ISTokensManagerStruct.Rewards memory _rewards,
+		bytes32 _payload
 	) external view returns (string memory);
 
 	/*
