@@ -1,6 +1,6 @@
 {
 	"name": "@devprotocol/i-s-tokens",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "STokens interface",
 	"scripts": {
 		"generate": "hardhat compile",
