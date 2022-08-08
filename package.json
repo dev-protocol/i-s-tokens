@@ -13,7 +13,7 @@
 	"author": "",
 	"license": "MPL-2.0",
 	"files": [
-		"contracts/interface"
+		"contracts/interfaces"
 	],
 	"devDependencies": {
 		"@nomiclabs/hardhat-ethers": "2.1.0",
