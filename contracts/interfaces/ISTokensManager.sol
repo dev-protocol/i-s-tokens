@@ -204,4 +204,14 @@ interface ISTokensManager {
     /// @return The token identifier for the `_index`th NFT assigned to `_owner`,
     ///   (sort order not specified)
     function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);
+
+	/// @dev Sets a resale royalty for the passed Property Tokens's STokens
+	/// @param _property the property for which we register the royalties
+	/// @param _percentage percentage (using 2 decimals - 10000 = 100, 0 = 0)
+	function setSTokenRoyaltyForProperty(address _property, uint256 _percentage) external;
+
+	/// @dev get royalty 
+	/// @param _property property address
+	/// @return Royalty value of a Property's STokens (value in decimals - 10000 = 100, 0 = 0)
+	function royaltyOf(address _property) returns(uint24) external;
 }
