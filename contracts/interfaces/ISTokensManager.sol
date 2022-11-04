@@ -213,5 +213,5 @@ interface ISTokensManager {
 	/// @dev get royalty 
 	/// @param _property property address
 	/// @return Royalty value of a Property's STokens (value in decimals - 10000 = 100, 0 = 0)
-	function royaltyOf(address _property) returns(uint24) external;
+	function royaltyOf(address _property) external returns(uint24);
 }
