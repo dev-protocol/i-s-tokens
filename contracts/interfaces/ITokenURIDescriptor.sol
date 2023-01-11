@@ -21,7 +21,7 @@ interface ISTokensHooksOnBeforeMint {
 	) external returns (bool);
 }
 
-interface ITokenURIImageDescriptor is ISTokensHooksOnBeforeMint {
+interface ITokenURIImageDescriptor {
 	/*
 	 * @dev get image from custom descriptor
 	 * @param _tokenId token id
@@ -40,7 +40,7 @@ interface ITokenURIImageDescriptor is ISTokensHooksOnBeforeMint {
 	) external view returns (string memory);
 }
 
-interface ITokenURINameDescriptor is ISTokensHooksOnBeforeMint {
+interface ITokenURINameDescriptor {
 	/*
 	 * @dev get name from custom descriptor
 	 * @param _tokenId token id
@@ -59,7 +59,7 @@ interface ITokenURINameDescriptor is ISTokensHooksOnBeforeMint {
 	) external view returns (string memory);
 }
 
-interface ITokenURIDescriptionDescriptor is ISTokensHooksOnBeforeMint {
+interface ITokenURIDescriptionDescriptor {
 	/*
 	 * @dev get name from custom descriptor
 	 * @param _tokenId token id
@@ -79,6 +79,7 @@ interface ITokenURIDescriptionDescriptor is ISTokensHooksOnBeforeMint {
 }
 
 interface ITokenURIDescriptor is
+	ISTokensHooksOnBeforeMint,
 	ITokenURIImageDescriptor,
 	ITokenURINameDescriptor,
 	ITokenURIDescriptionDescriptor
