@@ -92,8 +92,22 @@ interface ISTokensManagerV2 is ISTokensManagerStruct {
 	 * @param _property property address
 	 * @param _descriptor descriptor address
 	 */
-	function setTokenURIDescriptor(address _property, address _descriptor)
-		external;
+	function setTokenURIDescriptor(
+		address _property,
+		address _descriptor
+	) external;
+
+	/*
+	 * @dev set token uri descriptor
+	 * @param _property property address
+	 * @param _descriptor descriptor address
+	 * @param _keys[] bytes32[] keys
+	 */
+	function setTokenURIDescriptor(
+		address _property,
+		address _descriptor,
+		bytes32[] calldata _keys
+	) external;
 
 	/*
 	 * @dev freeze token uri data
@@ -106,10 +120,9 @@ interface ISTokensManagerV2 is ISTokensManagerStruct {
 	 * @param _tokenId The ID of the staking position
 	 * @return StakingPositions staking positions
 	 */
-	function positions(uint256 _tokenId)
-		external
-		view
-		returns (StakingPositions memory);
+	function positions(
+		uint256 _tokenId
+	) external view returns (StakingPositions memory);
 
 	/*
 	 * @dev Get the freezed status.
@@ -130,20 +143,18 @@ interface ISTokensManagerV2 is ISTokensManagerStruct {
 	 * @param _property property address
 	 * @return uint256[] token id list
 	 */
-	function positionsOfProperty(address _property)
-		external
-		view
-		returns (uint256[] memory);
+	function positionsOfProperty(
+		address _property
+	) external view returns (uint256[] memory);
 
 	/*
 	 * @dev get token ids by owner
 	 * @param _owner owner address
 	 * @return uint256[] token id list
 	 */
-	function positionsOfOwner(address _owner)
-		external
-		view
-		returns (uint256[] memory);
+	function positionsOfOwner(
+		address _owner
+	) external view returns (uint256[] memory);
 
 	/*
 	 * @dev get simulated token uri
@@ -168,39 +179,56 @@ interface ISTokensManagerV2 is ISTokensManagerStruct {
 	function descriptorOf(address _property) external view returns (address);
 
 	/*
+	 * @dev get descriptor address
+	 * @param _property property address
+	 * @param _payload token payload
+	 * @return address descriptor address
+	 */
+	function descriptorOfPropertyByPayload(
+		address _property,
+		bytes32 _payload
+	) external view returns (address);
+
+	/*
 	 * @dev get current token id
 	 * @return uint256 current token id
 	 */
 	function currentIndex() external view returns (uint256);
 
 	/// @notice Count NFTs tracked by this contract
-    /// @return A count of valid NFTs tracked by this contract, where each one of
-    ///  them has an assigned and queryable owner not equal to the zero address
-    function totalSupply() external view returns (uint256);
+	/// @return A count of valid NFTs tracked by this contract, where each one of
+	///  them has an assigned and queryable owner not equal to the zero address
+	function totalSupply() external view returns (uint256);
 
 	/// @notice Enumerate valid NFTs
-    /// @dev Throws if `_index` >= `totalSupply()`.
-    /// @param _index A counter less than `totalSupply()`
-    /// @return The token identifier for the `_index`th NFT,
-    ///  (sort order not specified)
-    function tokenByIndex(uint256 _index) external view returns (uint256);
+	/// @dev Throws if `_index` >= `totalSupply()`.
+	/// @param _index A counter less than `totalSupply()`
+	/// @return The token identifier for the `_index`th NFT,
+	///  (sort order not specified)
+	function tokenByIndex(uint256 _index) external view returns (uint256);
 
 	/// @notice Enumerate NFTs assigned to an owner
-    /// @dev Throws if `_index` >= `balanceOf(_owner)` or if
-    ///  `_owner` is the zero address, representing invalid NFTs.
-    /// @param _owner An address where we are interested in NFTs owned by them
-    /// @param _index A counter less than `balanceOf(_owner)`
-    /// @return The token identifier for the `_index`th NFT assigned to `_owner`,
-    ///   (sort order not specified)
-    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);
+	/// @dev Throws if `_index` >= `balanceOf(_owner)` or if
+	///  `_owner` is the zero address, representing invalid NFTs.
+	/// @param _owner An address where we are interested in NFTs owned by them
+	/// @param _index A counter less than `balanceOf(_owner)`
+	/// @return The token identifier for the `_index`th NFT assigned to `_owner`,
+	///   (sort order not specified)
+	function tokenOfOwnerByIndex(
+		address _owner,
+		uint256 _index
+	) external view returns (uint256);
 
 	/// @dev Sets a resale royalty for the passed Property Tokens's STokens
 	/// @param _property the property for which we register the royalties
 	/// @param _percentage percentage (using 2 decimals - 10000 = 100, 0 = 0)
-	function setSTokenRoyaltyForProperty(address _property, uint256 _percentage) external;
+	function setSTokenRoyaltyForProperty(
+		address _property,
+		uint256 _percentage
+	) external;
 
-	/// @dev get royalty 
+	/// @dev get royalty
 	/// @param _property property address
 	/// @return Royalty value of a Property's STokens (value in decimals - 10000 = 100, 0 = 0)
-	function royaltyOf(address _property) external returns(uint24);
+	function royaltyOf(address _property) external returns (uint24);
 }
