@@ -10,7 +10,11 @@
 		"lint:format": "prettier --write '**/*.{sol,ts,json,md,yml}'",
 		"clean": "rimraf artifacts"
 	},
-	"author": "",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dev-protocol/i-s-tokens.git"
+	},
+	"author": "Dev Protocol",
 	"license": "MPL-2.0",
 	"files": [
 		"contracts/interfaces"
